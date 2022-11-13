@@ -35,8 +35,7 @@
   <div class="product-card" id="template" style="margin:10px;">
 
     <div>
-      <img class="product-image" src="" style="width:100%;
-      height:150px; object-fit:contain;" alt="">
+      <img class="product-image" src="" alt="">
     </div>
 
     <div class="product-info">
@@ -45,14 +44,7 @@
       <hr />
 
       <div style="width:50px" >
-      <select class="custom-select" id="custom-select">
-          <option value="0">Select size:</option>
-          <option value="1">116</option>
-          <option value="2">128</option>
-          <option value="3">140</option>
-          <option value="4">152</option>
-          <option value="5">164</option>
-        </select>
+      <select class="custom-select" id=""></select>
       </div>
 
       <h2 class="addnumber">Add a number? (+3eur)</h2>
@@ -84,9 +76,32 @@
           clone.getElementsByClassName("product-image")[0].alt = shopItems[i].name;
           clone.getElementsByClassName("product-name")[0].innerText = shopItems[i].text;
           clone.getElementsByClassName("price")[0].innerText = shopItems[i].price + " eur";
+          clone.getElementsByClassName("custom-select")[0].id = shopItems[i].size;
+          
+            let sizeID = clone.getElementsByClassName("custom-select")[0].id;
+            let element = clone.getElementsByClassName("custom-select")[0];
+               if (sizeID == "A") {
+                let child = document.createElement("option"); child.text = "Select size:"; child.value = "0"; element.appendChild(child);
+                let child1 = document.createElement("option"); child1.text = "116"; child1.value = "1"; element.appendChild(child1);
+                let child2 = document.createElement("option"); child2.text = "128"; child2.value = "2"; element.appendChild(child2);
+                let child3 = document.createElement("option"); child3.text = "140"; child3.value = "3"; element.appendChild(child3);
+                let child4 = document.createElement("option"); child4.text = "152"; child4.value = "4"; element.appendChild(child4);
+                let child5 = document.createElement("option"); child5.text = "164"; child5.value = "5"; element.appendChild(child5);
+            }  else if (sizeID == "B") {
+              let child = document.createElement("option"); child.text = "Select size:"; child.value = "0"; element.appendChild(child);
+                let child1 = document.createElement("option"); child1.text = "110-120"; child1.value = "1"; element.appendChild(child1);
+                let child2 = document.createElement("option"); child2.text = "130-140"; child2.value = "2"; element.appendChild(child2);
+                let child3 = document.createElement("option"); child3.text = "150-160"; child3.value = "3"; element.appendChild(child3);
+            }    else if (sizeID == "C") {
+              let child = document.createElement("option"); child.text = "Select size:"; child.value = "0"; element.appendChild(child);
+                let child1 = document.createElement("option"); child1.text = "1 (31-34)"; child1.value = "1"; element.appendChild(child1);
+                let child2 = document.createElement("option"); child2.text = "2 (35-38)"; child2.value = "2"; element.appendChild(child2);
+                let child3 = document.createElement("option"); child3.text = "3 (39-42)"; child3.value = "3"; element.appendChild(child3);
+              }   else {
+                let child1 = document.createElement("option"); child1.text = "ONE SIZE"; child1.value = "1"; element.appendChild(child1);
+              } 
 
           document.body.append(clone);
-     
 
           let checkBox = document.getElementsByClassName("PrintCheck")[i+1];
           
@@ -137,11 +152,6 @@
           });
 
    };
-      
-
-//    OFF TOPIC
-//	 One of the options I found to solve functions not working on clones
-//   function(){componentHandler.upgradeAllRegistered();};
       </script>
 
     </div>
@@ -154,7 +164,7 @@
 <footer>
   <ul class="nav">
     <li><a href='index.html'>1. Select a player | </a></li>
-    <li id=current><a href='selection.html'">2. Choose products | </a></li>
+    <li id="current"><a href='selection.html'>2. Choose products | </a></li>
     <li><a href='cart.html'>3. Check and confirm your order</a></li>
   </ul>
 </footer>
