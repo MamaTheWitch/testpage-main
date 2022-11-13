@@ -25,19 +25,19 @@
 	  
 <form action="selection.html">
 <select name="datalist" class="players" id="datalist">
-			
-  			<option value="Aarne Aho #16">Aarne Aho #16</option>
- 			<option value="Leo Aikavuori #13">Leo Aikavuori #13</option>
- 		 	<option value="Emil Auvinen #26">Emil Auvinen #26</option>
- 		 	<option value="Killian Bradley #41">Killian Bradley #41</option>
-			<option value="Nooa Choi #38">Nooa Choi #38</option>
-			<option value="Joshua Dennis #14">Joshua Dennis #14</option>
-			<option value="Emil Dorsch #15">Emil Dorsch #15</option>
-			<option value="Valo Fiucci #23">Valo Fiucci #23</option>
-			<option value="Iiro Helander #18">Iiro Helander #18</option>
-			<option value="Alvi Holmas #15">Alvi Holmas #15</option>
-			<option value="Eemeli Huovinen #2">Eemeli Huovinen #2</option>
-			<option value="Noel Immonen #23">Noel Immonen #23</option>
+			<script>
+				    function fillPlayers() {
+        					var select = document.getElementById("datalist"); 
+        					for(var i = 0; i < players.length; i++) {
+        					var opt = players[i];
+        					var element = document.createElement("option");
+        					element.text = opt;
+        					element.value = opt;
+     						select.add(element);
+        					// select.appendChild(element);
+        					};}
+  					fillPlayers()
+			</script>
 </select>
 <input type="submit">
   

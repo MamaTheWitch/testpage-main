@@ -45,7 +45,7 @@
 	    	<button onclick="window.location='selection.html'+window.location.search;" id="BackButton">No. Back to shopping!</button>
 	</div>
 
-     <script src="orders.js"></script>
+
       
 <script>
 
@@ -54,7 +54,7 @@
       let queryDict = location.search.substr(1).split("=")[1];
       let queryName = queryDict.split("+");
       let fullName = `${queryName[0]} ${queryName[1]}`;
-      let greeting = "So here's your order summary for "+fullName+":";
+      let greeting = "Here's your order summary for "+fullName+":";
       document.getElementsByClassName("typing")[0].innerHTML = String(greeting);
 	
 function GenerateCartItems(){
@@ -82,7 +82,7 @@ function GenerateCartItems(){
     };
     
     	let sum = basket.map(o => o.price2).reduce((a, c) => { return a + c });
-	let summary = "You have "+basket.length+" items in your cart. It will be "+(sum).toFixed(2)+" euros in total. *";
+	let summary = "You have "+basket.length+" items in your cart. Total: "+(sum).toFixed(2)+" euros. *";
 
 	document.getElementsByClassName("total")[0].innerText = String(summary);
            

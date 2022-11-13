@@ -23,9 +23,9 @@
     }
 
 
-    .product-image img {
+    .product-image {
       width: 90%;
-      height: 150px;
+      height: 130px;
       object-fit: contain;
       margin: 5%;
     }
