@@ -94,10 +94,10 @@
       width: 98%;
       height: 50px;
       align-items: center;
-	object-fit: contain;
+	    object-fit: contain;
       background-color: white;
       margin: 1%;
-	padding: 1px;
+	    padding: 1px;
       border-radius: 5px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
