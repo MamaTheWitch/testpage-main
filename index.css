@@ -1,0 +1,39 @@
+		body {
+		background-image: url('images/grass.jpg');
+		background-attachment: fixed;
+ 		background-size: cover;
+      		margin-bottom: 100px;
+		}
+    
+		.centerTXT { 
+		text-align: center; 
+		color: white; 
+		font-family: lucida grande,lucida sans unicode,lucida sans,Geneva,Arial,sans-serif; 
+		font-weight: 700;
+		}
+
+		.players { 
+		background-color: white; 
+		font-size: 80%;
+		}
+.nav {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: whitesmoke; 
+  text-align: center;
+  padding: 0;
+}
+.nav a {
+  text-decoration: none;
+  color: #36454F;}
+.nav li {
+  display: inline-block;
+}
+		#current a {
+		color: white;
+		background-color:#36454F;
+		opacity: 0.7;
+  		}
+    

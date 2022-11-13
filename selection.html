@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>P2013 Vihrea Stadium team order 2022/11</title>
+  <meta chartset="UTF-8" http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="selection.css" type="text/css" />
+
+</head>
+
+<body>
+  <div id="snackbar">Item added to cart 👍</div>
+  <noscript>JavaScript is not supported by your browser. Unblock it to continue with your order!</noscript>
+
+  <p>
+    <img src="images/honkaLogo.png" alt="FC Honka logo" style="float:left;height:40px;">
+    <img src="images/stadiumLogo.webp" alt="Stadium Teamsales logo" style="float:right;height:30px;">
+  </p>
+  <br><br><br>
+
+<div class="topbar"> 
+  
+    <div class="reviewButton">
+      <button onclick="window.location='cart.html'+window.location.search;" >Review and submit my order!</button>
+    </div>
+  
+  <div class="cartIcon">
+    <img src="images/cart.png">
+    <div id="cartAmount"></div>
+  </div>
+  
+</div>
+<br><br>
+
+  <div class="product-card" id="template" style="margin:10px;">
+
+    <div>
+      <img class="product-image" src="" style="width:100%;
+      height:150px; object-fit:contain;" alt="">
+    </div>
+
+    <div class="product-info">
+
+      <h2 class="product-name"> </h2>
+      <hr />
+
+      <div style="width:50px" >
+      <select class="custom-select" id="custom-select">
+          <option value="0">Select size:</option>
+          <option value="1">116</option>
+          <option value="2">128</option>
+          <option value="3">140</option>
+          <option value="4">152</option>
+          <option value="5">164</option>
+        </select>
+      </div>
+
+      <h2 class="addnumber">Add a number? (+3eur)</h2>
+
+      <span class="price"></span>
+
+      <label class="switch">
+        <input type="checkbox" class="PrintCheck">
+        <span class="slider"></span>
+      </label>
+
+      <button class="add-to-cart-button"> add to cart 🛒 </button>
+      
+<script src="data.js"></script>
+      
+      <script>
+
+        let basket = JSON.parse(localStorage.getItem("data")) || [];
+        
+        var Product = document.getElementById("template")
+
+        for (let i = 0; i < shopItems.length; i++) {
+
+          let clone = Product.cloneNode(true)
+
+          clone.id = i
+
+          clone.getElementsByClassName("product-image")[0].src = shopItems[i].pic;
+          clone.getElementsByClassName("product-image")[0].alt = shopItems[i].name;
+          clone.getElementsByClassName("product-name")[0].innerText = shopItems[i].text;
+          clone.getElementsByClassName("price")[0].innerText = shopItems[i].price + " eur";
+
+          document.body.append(clone);
+     
+
+          let checkBox = document.getElementsByClassName("PrintCheck")[i+1];
+          
+          function AddPrintPrice() {
+          if (checkBox.checked == true) {
+          return document.getElementsByClassName("price")[i+1].innerText = (shopItems[i].price + 3).toFixed(2) + " eur";}
+          else {
+          return document.getElementsByClassName("price")[i+1].innerText = shopItems[i].price + " eur";}
+          };
+
+          clone.getElementsByClassName("PrintCheck")[0].addEventListener("click", function(){
+          AddPrintPrice() });
+
+          
+          clone.getElementsByClassName("add-to-cart-button")[0].addEventListener("click", function(){
+            var sizeSelection = clone.getElementsByClassName("custom-select")[0].value;
+            var select = clone.getElementsByClassName("custom-select")[0];
+            var sizeSelection2 = select.options[select.selectedIndex].textContent;
+            
+      let queryDict = location.search.substr(1).split("=")[1];
+      let queryName = queryDict.split("+");
+      let fullName = `${queryName[0]} ${queryName[1]}`;
+        
+            if (sizeSelection == "0") {
+              return alert("Please select the size!");}
+            else 
+              var x = document.getElementById("snackbar");
+              x.className ="show";
+              setTimeout(function(){x.className = x.className.replace("show", ""); }, 2000);
+            
+              basket.push({
+                player: fullName,
+                image: shopItems[i].pic,
+                product: shopItems[i].name,
+                item: shopItems[i].text,
+                size: sizeSelection2,
+                print: checkBox.checked,
+                price: AddPrintPrice(),
+                price2: parseFloat(AddPrintPrice()),
+                           });
+            
+            console.log(basket);
+            
+            localStorage.setItem("data", JSON.stringify(basket));
+            
+            document.getElementById("cartAmount").innerText = basket.length;
+           
+          });
+
+   };
+      
+
+//    OFF TOPIC
+//	 One of the options I found to solve functions not working on clones
+//   function(){componentHandler.upgradeAllRegistered();};
+      </script>
+
+    </div>
+  </div>
+
+  <br><br><br><br><br>
+
+</body>
+
+<footer>
+  <ul class="nav">
+    <li><a href='index.html'>1. Select a player | </a></li>
+    <li id=current><a href='selection.html'">2. Choose products | </a></li>
+    <li><a href='cart.html'>3. Check and confirm your order</a></li>
+  </ul>
+</footer>
+      
+</html>

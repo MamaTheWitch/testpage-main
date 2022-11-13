@@ -1,0 +1,224 @@
+
+    #template {
+      display: none;
+    }
+    
+    body {
+      background-color: white;
+      margin-bottom: 300px;
+    }
+
+/**
+* ! My comments:   border: 2px solid black;
+* ? My comments
+**/
+
+    .product-card {
+      float: left;
+      width: 130px;
+      height: 300px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+
+    .product-image img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    .product-info {
+      width: 100%;
+      height: 150px;
+      line-height: 10px;
+      border-radius: 5px;
+    }
+
+    .product-name {
+      font-size: 70%;
+      opacity: 0.5;
+      margin: 3%;
+      padding: 5px;
+    }
+
+    .custom-select {
+      position: relative;
+      left: 30%;
+    }
+    
+    .custom-select select {
+      padding: 3px;
+      font-size: 80%
+    }
+
+    .addnumber {
+      font-size: 70%;
+      line-height: 10px;
+      opacity: 0.8;
+      margin: 3%;
+      padding: 3px;
+    }
+
+    .price {
+      line-height: 10px;
+      font-weight: 900;
+      font-size: 80%;
+      margin: 0px 0px 0px 15px;
+      padding: 5px;
+    }
+
+    .add-to-cart-button {
+      width: 110px;
+      height: 25px;
+      font-size: 70%;
+      font-weight: 700;
+      color: #36454F;
+      position: relative;
+      margin: 10px;
+      background-color: #ccc;
+      border-color: transparent;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 3px;
+    }
+
+    .add-to-cart-button:hover {
+      background-color: #D3D3D3;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 10px;
+      margin: 0px 0px 0px 0px;
+      padding: 5px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* The slider */
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      border-radius: 10px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      border-radius: 50%;
+      content: "";
+      height: 15px;
+      width: 15px;
+      left: 2px;
+      bottom: 3px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked+.slider {
+      background-color: #FFD700;
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(21px);
+      -ms-transform: translateX(21px);
+      transform: translateX(21px);
+    }
+
+    .nav {
+      position: fixed;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      background-color: whitesmoke;
+      text-align: center;
+      padding: 0;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #36454F;
+    }
+
+    .nav li {
+      display: inline-block;
+    }
+
+    #current a {
+      color: white;
+      background-color: #36454F;
+      opacity: 0.7;
+    }
+
+    #snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 60px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2s;
+  animation: fadein 0.5s, fadeout 0.5s 2s;
+}
+
+    
+  .topbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212529;
+    color: white;
+    padding: 10px 10px;
+  }
+
+    .cartIcon {
+      height: 50%;
+      position: relative;
+      font-size: 100%;
+    }
+    
+    .cartIcon img{
+      height: 2em;
+    }
+
+    #cartAmount{
+      position: absolute;
+      bottom:0;
+      color: #FFD700;
+      background-color: #212529;
+      border-radius: 50px;
+    }
+
+    .reviewButton button {
+      height: 50%;
+      background-color: #FFD700;
+      border-radius: 5px;
+      cursor: pointer;
+    }
