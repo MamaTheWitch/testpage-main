@@ -24,9 +24,10 @@
 
 
     .product-image img {
-      width: 100%;
+      width: 90%;
       height: 150px;
       object-fit: contain;
+      margin: 5%;
     }
 
     .product-info {
