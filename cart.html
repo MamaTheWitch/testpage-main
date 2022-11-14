@@ -8,7 +8,14 @@
     </head>
     <body>
 		<p><img src="images/honkaLogo.png" alt="FC Honka logo" style="float:left;height:40px;"><img src="images/stadiumLogo.webp" alt="Stadium Teamsales logo" style="float:right;height:30px;"></p><br><br><br><br><br>
-      	<div class="typing"></div><br>
+		<header>
+			<ul class="nav">
+			<li><a href="index.html">1. Select a player > </a></li>
+			<li><a href="selection.html">2. Choose products > </a></li>
+			<li id=current><a href="cart.html">3. Check and confirm your order</a></li> 
+	  		</ul>
+		</header><br>
+		<div class="typing"></div><br>
 		
 		<div class="cart-card" id="template">
 <img class="thumb-image" src="" alt="image">
@@ -49,16 +56,13 @@
 	
 function GenerateCartItems(){
 	if (basket.length !== 0) {
-    
     let Product = document.getElementById("template");
-		
-			
-    
+	
     for (let i = 0; i < basket.length; i++) {
           let clone = Product.cloneNode(true)
           clone.id = i
 	    
-	    			function printOption(){
+	    		function printOption(){
 				if (basket[i].print == true) {return "YES";}
 				else {return "NO";} };
 	    
@@ -66,32 +70,33 @@ function GenerateCartItems(){
           clone.getElementsByClassName("product-name")[0].innerText = basket[i].product;
           clone.getElementsByClassName("item-name")[0].innerText = basket[i].item;
           clone.getElementsByClassName("number")[0].innerText = "Number print: "+String(printOption());
-	  clone.getElementsByClassName("size")[0].innerText = "Selected size: "+String(basket[i].size);
+	  	  clone.getElementsByClassName("size")[0].innerText = "Selected size: "+String(basket[i].size);
           clone.getElementsByClassName("price")[0].innerText = basket[i].price;
+
+		  clone.getElementsByClassName("delete-button")[0].addEventListener("click", function(){
+			basket.splice(i,1);
+			localStorage.setItem("data", JSON.stringify(basket));
+			window.location.reload();
+		  });
+
           document.body.append(clone);
     };
     
-    	let sum = basket.map(o => o.price2).reduce((a, c) => { return a + c });
+    let sum = basket.map(o => o.price2).reduce((a, c) => { return a + c });
 	let summary = "You have "+basket.length+" items in your cart. Total: "+(sum).toFixed(2)+" euros. *";
-
 	document.getElementsByClassName("total")[0].innerText = String(summary);
-           
+
 	return ; }
 	else {document.getElementsByClassName("total")[0].innerText = "Your cart is empty 🤷";}
 };
+
 GenerateCartItems()
 	
-	document.getElementsByClassName("delete-button")[0].addEventListener("click", function(){
-		for (var i = 0, len = basket.length; i < len; i++) {
-			delete basket[i];
-			localStorage.setItem("data", JSON.stringify(basket));
-			basket = JSON.parse(localStorage.getItem("data")) || [];
-			GenerateCartItems();
-			window.location.reload();
-		}});
+	
 		
 		
 		
+	/*	
           document.getElementById("Submit").addEventListener("click", function(){
 		for (var i = 0, len = basket.length; i < len; i++) {
 			//delete basket[i].image;
@@ -123,22 +128,11 @@ GenerateCartItems()
               		x.className ="show";
               		setTimeout(function(){x.className = x.className.replace("show", ""); }, 2000);
 		*/
-		}});          
-
+//		}});          
     //  document.getElementById("cartAmount").innerText = basket.length;
    
 </script>
      
-</body>
-
-<footer>
-      <ul class="nav">
-  <li><a href="index.html">1. Select a player | </a></li>
-  <li><a href="selection.html">2. Choose products | </a></li>
-  <li id=current><a href="cart.html">3. Check and confirm your order</a></li> 
-</ul>
-</footer>
-	
-      
+</body>      
 
 </html>

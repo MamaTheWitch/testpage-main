@@ -8,29 +8,36 @@
 		.centerTXT { 
 		text-align: center; 
 		color: white; 
-		font-family: lucida grande,lucida sans unicode,lucida sans,Geneva,Arial,sans-serif; 
+		font-family: Arial,sans-serif; 
 		font-weight: 700;
+		font-size: 80%;
 		}
 
 		.players { 
 		background-color: white; 
 		font-size: 80%;
 		}
-.nav {
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  width: 100%;
-  background-color: whitesmoke; 
-  text-align: center;
-  padding: 0;
-}
-.nav a {
-  text-decoration: none;
-  color: #36454F;}
-.nav li {
-  display: inline-block;
-}
+
+		.nav {
+		position: relative;
+		left: 0px;
+		bottom: 0px;
+		width: 100%;
+		background-color: whitesmoke; 
+		opacity: 0.8;
+		text-align: center;
+		padding: 0;
+		}
+
+		.nav a {
+		text-decoration: none;
+		font-size: 80%;
+		color: #36454F;}
+
+		.nav li {
+		display: inline-block;
+		}
+
 		#current a {
 		color: white;
 		background-color:#36454F;

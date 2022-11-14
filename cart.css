@@ -12,13 +12,26 @@
 .total {
   display:flex;
   background-color: white;
+  opacity: 0.8;
   border-radius: 5px;
 	color: #36454F;
 	font-weight: 700;
 	font-size: 100%;
 	padding: 2px;
-  justify-content: space-around;
+  justify-content: center;
 	}
+
+  .typing{
+    display:flex;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 5px;
+    color: #36454F;
+    font-weight: 700;
+    font-size: 100%;
+    padding: 2px;
+    justify-content: center;
+}
 		
 .small {
 	width: 100%;
@@ -30,10 +43,12 @@
 	padding: 2px;
 	}
 		
-.typing {
+
+  /* .typing {
 	display: flex;
 	overflow: hidden;
   background-color: white;
+  opacity: 0.8;
   border-radius: 5px;
 	color: #36454F; 
 	border-right: .15em solid rgba(255, 166, 0, 0.011);
@@ -47,19 +62,22 @@
 	from { width: 0 }
 	to { width: 99%}
 	}
+*/
 
 .nav {
-	position: fixed;
+	position: relative;
 	left: 0px;
 	bottom: 0px;
 	width: 100%;
 	background-color: whitesmoke; 
 	text-align: center;
 	padding: 0;
+  opacity: 0.8;
 	}
 		
 .nav a {
 	text-decoration: none;
+  font-size: 80%;
 	color: #36454F;
 	}
 
