@@ -10,56 +10,42 @@
     	}
 
 .total {
-	 width: 100%;
-	text-align: center; 
-  	background-color: white;
-  	border-radius: 5px;
-	color: #36454F; 
-	font:calibri; 
+  display:flex;
+  background-color: white;
+  border-radius: 5px;
+	color: #36454F;
 	font-weight: 700;
 	font-size: 100%;
 	padding: 2px;
+  justify-content: space-around;
 	}
 		
 .small {
 	width: 100%;
 	text-align: center; 
-  	border-radius: 5px;
+  border-radius: 5px;
 	color: #36454F; 
-	font:calibri; 
 	font-weight: 300;
 	font-size: 70%;
 	padding: 2px;
 	}
-	
-.big {
-	 width: 100%;
-	text-align: center; 
-  	background-color: white;
-  	border-radius: 5px;
-	color: #36454F; 
-	font:calibri; 
-	font-weight: 700;
-	font-size: 100%;
-	padding: 2px;
-	}
 		
 .typing {
-	display: inline-block;
+	display: flex;
 	overflow: hidden;
-	border-right: .15em solid orange;
-	color: black; 
-	font:calibri; 
+  background-color: white;
+  border-radius: 5px;
+	color: #36454F; 
+	border-right: .15em solid rgba(255, 166, 0, 0.011);
 	font-weight: 700;
 	white-space: nowrap;
 	animation: typing 3s steps(100, end) forwards;
-	width: 0;
 	padding: 2px;
 	}
 		
 @keyframes typing {
 	from { width: 0 }
-	to { width: 100% }
+	to { width: 99%}
 	}
 
 .nav {
@@ -196,25 +182,3 @@
       cursor: pointer;
       padding: 3px;
   	}
-    
-#snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 5px;
-  padding: 16px;
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  top: 60px;
-  font-size: 17px;
-}
-
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 4s;
-  animation: fadein 0.5s, fadeout 0.5s 4s;
-}

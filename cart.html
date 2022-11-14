@@ -2,23 +2,15 @@
 <html>
     <head>
         <title>P2013 Vihrea Stadium team order 2022/11</title>
-	
-	    	<meta chartset="UTF-8" http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1">
+	    <meta chartset="UTF-8" http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="cart.css">
-	<style>
-		
-
-	</style>
+		<style></style>
     </head>
     <body>
-	      <div id="snackbar">That's it! Your order has been placed! 🎉 See you at the field!</div>
-	<p><img src="images/honkaLogo.png" alt="FC Honka logo" style="float:left;height:40px;"><img src="images/stadiumLogo.webp" alt="Stadium Teamsales logo" style="float:right;height:30px;"></p>
-        <br><br><br><br><br>
-      
-      <div class="typing"></div>
-      <br>
-
-<div class="cart-card" id="template">
+		<p><img src="images/honkaLogo.png" alt="FC Honka logo" style="float:left;height:40px;"><img src="images/stadiumLogo.webp" alt="Stadium Teamsales logo" style="float:right;height:30px;"></p><br><br><br><br><br>
+      	<div class="typing"></div><br>
+		
+		<div class="cart-card" id="template">
 <img class="thumb-image" src="" alt="image">
 	
  <div class="names">
@@ -34,22 +26,20 @@
 	<div class="price"></div>
 	<button class="delete-button">🗑️</button>
 
-</div>
+		</div>
 
- 	<div class="total"></div>
-  <div class="small">* You will get an invoice for your order together with the next team fee invoice.</div>
-  <div class="big">Sounds good?</div>
+ 		<div class="total"></div>
+  		<div class="small">* You will get an invoice for your order together with the next team fee invoice.</div>
+  		<div class="total">Sounds good?</div>
 	
 	    <div class="buttons">    
-		<button id="Submit">Yes. Submit my order!</button>
-	    	<button onclick="window.location='selection.html'+window.location.search;" id="BackButton">No. Back to shopping!</button>
-	</div>
-
-
-      
+			<button id="Submit">Yes. Submit my order!</button>
+	    	<button id="BackButton" onclick="window.location='selection.html'+window.location.search;">No. Back to shopping!</button>
+		</div>
+     
 <script>
 
-        let basket = JSON.parse(localStorage.getItem("data")) || [];
+      let basket = JSON.parse(localStorage.getItem("data")) || [];
 	      
       let queryDict = location.search.substr(1).split("=")[1];
       let queryName = queryDict.split("+");
@@ -104,10 +94,11 @@ GenerateCartItems()
 		
           document.getElementById("Submit").addEventListener("click", function(){
 		for (var i = 0, len = basket.length; i < len; i++) {
-			delete basket[i].image;
-			localStorage.setItem("data", JSON.stringify(basket));
-			basket = JSON.parse(localStorage.getItem("data")) || []; 
+			//delete basket[i].image;
+			//localStorage.setItem("data", JSON.stringify(basket));
+			//basket = JSON.parse(localStorage.getItem("data")) || []; 
 			console.log(basket);
+			window.location='kiitos.html'+window.location.search;
 	
 			async function postData(url = 'https://honkap13server.mamathewitch.repl.co/hello', data = basket) {
 		  		const response = await fetch(url, {
@@ -122,14 +113,16 @@ GenerateCartItems()
 			postData();
 		//  postData().then((data) => {console.log(data); }); // JSON data parsed by `data.json()` call
 
-		//  localStorage.clear();
-		//  basket = JSON.parse(localStorage.getItem("data")) || [];
-		//  GenerateCartItems();
-		//  window.location.reload();
-		 
-		 	var x = document.getElementById("snackbar");
+		 /* localStorage.clear();
+		    basket = JSON.parse(localStorage.getItem("data")) || [];
+		    GenerateCartItems();
+		 	window.location.reload();
+		 */
+		
+		 /*	var x = document.getElementById("snackbar");
               		x.className ="show";
               		setTimeout(function(){x.className = x.className.replace("show", ""); }, 2000);
+		*/
 		}});          
 
     //  document.getElementById("cartAmount").innerText = basket.length;
