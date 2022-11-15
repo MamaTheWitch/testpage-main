@@ -120,9 +120,9 @@
 
 .names {
       flex-direction: column;
-	width: 30%;
-	font-size: 70%;
-	margin: 3%;
+      width: 30%;
+      font-size: 70%;
+      margin: 3%;
     }
 
 .product-name {
@@ -136,15 +136,15 @@
 
 #line {
       flex-direction: column;
-      height: 80%
+      height: 80%;
     }
 
 .info {
-	flex-direction: column;
-	font-size: 70%;
-	opacity: 0.8;
-	width: 30%;
-	margin: 3%;
+	  flex-direction: column;
+    font-size: 70%;
+    opacity: 0.8;
+    width: 30%;
+    margin: 3%;
     }
   
 .number {
