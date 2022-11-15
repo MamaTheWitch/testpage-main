@@ -2,51 +2,55 @@
 	background-image: url('images/field.jpeg');
 	background-attachment: fixed;
  	background-size: cover;
-      	margin-bottom: 100px;
+  margin-bottom: 100px;
 	}
+
+  #whiteBox{
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 5px;
+    width: fit-content;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
 
 #template {
       display: none;
     	}
 
 .total {
-  display:flex;
-  background-color: white;
-  opacity: 0.8;
-  border-radius: 5px;
-	color: #36454F;
-	font-weight: 700;
-	font-size: 100%;
-	padding: 2px;
+  display: flex;
+  color: #36454F;
+  font-weight: 700;
+  font-size: 100%;
+  padding: 2px;
   justify-content: center;
+  align-items: center;
 	}
 
-  .typing{
-    display:flex;
-    background-color: white;
-    opacity: 0.8;
-    border-radius: 5px;
-    color: #36454F;
-    font-weight: 700;
-    font-size: 100%;
-    padding: 2px;
-    justify-content: center;
-}
-		
 .small {
 	width: 100%;
 	text-align: center; 
-  border-radius: 5px;
 	color: #36454F; 
 	font-weight: 300;
 	font-size: 70%;
 	padding: 2px;
 	}
 		
-
-  /* .typing {
-	display: flex;
+  .typing{
+    display: flex;
+    color: #36454F;
+    font-weight: 700;
+    font-size: 100%;
+    padding: 2px;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+ /* 	display: flex;
 	overflow: hidden;
+  width: fit-content;
   background-color: white;
   opacity: 0.8;
   border-radius: 5px;
@@ -56,6 +60,9 @@
 	white-space: nowrap;
 	animation: typing 3s steps(100, end) forwards;
 	padding: 2px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
 	}
 		
 @keyframes typing {
@@ -63,7 +70,6 @@
 	to { width: 99%}
 	}
 */
-
 .nav {
 	position: relative;
 	left: 0px;

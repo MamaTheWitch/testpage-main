@@ -15,35 +15,34 @@
 			<li id=current><a href="cart.html">3. Check and confirm your order</a></li> 
 	  		</ul>
 		</header><br>
-		<div class="typing"></div><br>
-		
-		<div class="cart-card" id="template">
-<img class="thumb-image" src="" alt="image">
-	
- <div class="names">
- <div class="product-name"></div>
-	<div class="item-name"></div>
-  </div>
-      	<hr id="line" />
-  <div class="info">     
-	<div class="number"></div>
-	  <div class="size"></div>
-</div>	  
-	<hr id="line" />
-	<div class="price"></div>
-	<button class="delete-button">🗑️</button>
 
+		<div id="whiteBox">
+			<div class="typing"></div><br>
+ 			<div class="total"></div>
+  			<div class="small">* You will get an invoice for your order together with the next team fee invoice.</div>
+  			<div class="total">Sounds good?</div>
 		</div>
-
- 		<div class="total"></div>
-  		<div class="small">* You will get an invoice for your order together with the next team fee invoice.</div>
-  		<div class="total">Sounds good?</div>
 	
 	    <div class="buttons">    
 			<button id="Submit">Yes. Submit my order!</button>
 	    	<button id="BackButton" onclick="window.location='selection.html'+window.location.search;">No. Back to shopping!</button>
 		</div>
      
+		<div class="cart-card" id="template">
+			<img class="thumb-image" src="" alt="image">
+			<div class="names">
+				<div class="product-name"></div>
+				<div class="item-name"></div>
+			</div>
+			<hr id="line" />
+			<div class="info">     
+				<div class="number"></div>
+				<div class="size"></div>
+			</div>	  
+			<hr id="line" />
+			<div class="price"></div>
+			<button class="delete-button">🗑️</button>
+		</div>
 <script>
 
       let basket = JSON.parse(localStorage.getItem("data")) || [];
