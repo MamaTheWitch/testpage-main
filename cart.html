@@ -91,44 +91,29 @@ function GenerateCartItems(){
 
 GenerateCartItems()
 	
-	
-		
-		
-		
-	/*	
-          document.getElementById("Submit").addEventListener("click", function(){
-		for (var i = 0, len = basket.length; i < len; i++) {
-			//delete basket[i].image;
-			//localStorage.setItem("data", JSON.stringify(basket));
-			//basket = JSON.parse(localStorage.getItem("data")) || []; 
-			console.log(basket);
-			window.location='kiitos.html'+window.location.search;
-	
-			async function postData(url = 'https://honkap13server.mamathewitch.repl.co/hello', data = basket) {
+        document.getElementById("Submit").addEventListener("click", function(){
+			for (var i = 0, len = basket.length; i < len; i++) {
+				// console.log(JSON.stringify(basket));
+			
+		 		async function postData(url = 'https://honkap13server.mamathewitch.repl.co/hello', data = basket) {
 		  		const response = await fetch(url, {
   					method: 'POST',
   					credentials: 'omit', 
   					headers: {'Content-Type': 'application/json'},
   					body: JSON.stringify(data) } );
-					let myJason = await response.json();
+				let myJason = await response.json();
+				console.log(myJason);
 		  		return myJason;
-			}; // parses JSON response into native JavaScript objects
+				}; // parses JSON response into native JavaScript objects
 
-			postData();
-		//  postData().then((data) => {console.log(data); }); // JSON data parsed by `data.json()` call
+				postData();
+				//  postData().then((data) => {console.log(data); }); // JSON data parsed by `data.json()` call
 
-		 /* localStorage.clear();
-		    basket = JSON.parse(localStorage.getItem("data")) || [];
-		    GenerateCartItems();
-		 	window.location.reload();
-		 */
-		
-		 /*	var x = document.getElementById("snackbar");
-              		x.className ="show";
-              		setTimeout(function(){x.className = x.className.replace("show", ""); }, 2000);
-		*/
-//		}});          
-    //  document.getElementById("cartAmount").innerText = basket.length;
+		 	// localStorage.clear();
+			// window.location='kiitos.html'+window.location.search;
+			}
+		});          
+
    
 </script>
      
