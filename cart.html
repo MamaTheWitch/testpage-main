@@ -93,9 +93,7 @@ GenerateCartItems()
 	
         document.getElementById("Submit").addEventListener("click", function(){
 			for (var i = 0, len = basket.length; i < len; i++) {
-				// console.log(JSON.stringify(basket));
-			
-		 		async function postData(url = 'https://HonkaServer.mamathewitch.repl.co/hello', data = basket) {
+				async function postData(url = 'https://HonkaServer.mamathewitch.repl.co/hello', data = basket) {
 		  		const response = await fetch(url, {
   					method: 'POST',
   					credentials: 'omit', 
@@ -104,11 +102,8 @@ GenerateCartItems()
 				let myJason = await response.json();
 				console.log(myJason);
 		  		return myJason;
-				}; // parses JSON response into native JavaScript objects
-
+				}; 
 				postData();
-				//  postData().then((data) => {console.log(data); }); // JSON data parsed by `data.json()` call
-
 		 	// localStorage.clear();
 			// window.location='kiitos.html'+window.location.search;
 			}
