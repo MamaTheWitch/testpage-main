@@ -44,6 +44,22 @@
 			<button class="delete-button">🗑️</button>
 		</div>
 <script>
+	
+	var mutation = `mutation InsertP13($player: String, $product: String, $item: String, $size: String, $print: Boolean, $price2: Float) {
+  insert_p13(objects: {player: $player, product: $product, item: $item, size: $size, print: $print, price2: $price2}) {
+    affected_rows
+    returning {
+      time
+      player
+      product
+      item
+      size
+      print
+      price2
+    }
+  }
+}`
+
 
       let basket = JSON.parse(localStorage.getItem("data")) || [];
 	      
@@ -98,7 +114,7 @@ GenerateCartItems()
   					method: 'POST',
   					credentials: 'omit', 
   					headers: {'Content-Type': 'application/json'},
-  					body: JSON.stringify(data) } );
+  					body: JSON.stringify(query:mutation, variables:data) } );
 				let myJason = await response.json();
 				console.log(myJason);
 		  		return myJason;
