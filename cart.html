@@ -48,7 +48,11 @@
 	var mutation = `mutation InsertP13($player: String, $product: String, $item: String, $price: String, $image: String, $size: String, $print: Boolean, $price2: Float) {
   insert_p13(objects: {player: $player, product: $product, item: $item, price: $price, image: $image, size: $size, print: $print, price2: $price2}) {
     affected_rows
-    returning {
+   
+  }
+}`
+
+/*  returning {
       time
       player
       product
@@ -59,10 +63,7 @@
       print
       price2
     }
-  }
-}`
-
-
+    */
       let basket = JSON.parse(localStorage.getItem("data")) || [];
 	      
       let queryDict = location.search.substr(1).split("=")[1];
