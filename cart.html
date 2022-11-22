@@ -117,7 +117,7 @@ GenerateCartItems()
   					method: 'POST',
   					credentials: 'omit', 
   					headers: {'Content-Type': 'application/json'},
-  					body: JSON.stringify({query:mutation, variables:data[0]}) 
+  					body: JSON.stringify({query:mutation, variables:data[i]}) 
 				} );
 				let myJason = await response.json();
 				console.log(myJason);
