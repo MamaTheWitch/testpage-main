@@ -20,6 +20,8 @@
 
 		#player-selection-button {
       		background-color: #FFD700;
+		border-width: 1px;
+    		border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
       		border-radius: 5px;
       		cursor: pointer;
     		}
