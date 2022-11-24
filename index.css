@@ -18,7 +18,12 @@
 		font-size: 80%;
 		}
 
-		#player-selection-button
+		#player-selection-button button {
+      		height: 10px;
+      		background-color: #FFD700;
+      		border-radius: 5px;
+      		cursor: pointer;
+    		}
 
 		.nav {
 		position: relative;
