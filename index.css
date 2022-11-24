@@ -14,8 +14,8 @@
 		}
 
 		.players { 
-		background-color: white; 
-		font-size: 80%;
+		background-color: #FFD700;
+      		border-radius: 5px;
 		}
 
 		#player-selection-button {
