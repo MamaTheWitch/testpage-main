@@ -52,18 +52,6 @@
   }
 }`
 
-/*  returning {
-      time
-      player
-      product
-      item
-      price
-      image
-      size
-      print
-      price2
-    }
-    */
       let basket = JSON.parse(localStorage.getItem("data")) || [];
 	      
       let queryDict = location.search.substr(1).split("=")[1];
@@ -124,8 +112,8 @@ GenerateCartItems()
 		  		return myJason;
 				}; 
 				postData();
-		 	// localStorage.clear();
-			// window.location='kiitos.html'+window.location.search;
+		 	localStorage.clear();
+			window.location='kiitos.html'+window.location.search;
 			}
 		});          
 
