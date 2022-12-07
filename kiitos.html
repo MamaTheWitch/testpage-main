@@ -4,30 +4,41 @@
         <title>P2013 Vihrea Stadium team order 2022/11</title>
 		<meta chartset="UTF-8" http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1">
         <style>
-            body {
-                    background-image: url('images/sky.jpg');
-		            background-attachment: fixed;
- 		            background-size: cover;
-      		        margin-bottom: 100px;
-            }
+		body {
+			background-image: url('/images/grass.jpg');
+			background-attachment: fixed;
+			background-size: cover;
+		    }
+		
+         #container {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    }
+		
             #kiitos {
-                    min-width: 250px;
-                    background-color: #333;
-                    color: #fff;
+                    background-color: #fff;
+                    color: #333 ;
                     text-align: center;
                     border-radius: 5px;
                     padding: 16px;
                     position: absolute;
                     z-index: 1;
-                    left: 20%;
                     top: 100px;
-                    font-size: 17px;
-            }
+                    font-size: 20px;
+                    font-weight: 700;
+                    }
+            
         </style>
     </head>
 	
     <body>
-        <div id="kiitos">That's it! Your order has been placed! 🎉<br>See you at the field! ⚽ </div>
+            <div id="container">
+      		<div id="kiitos">
+        		That's it! Your order has been placed! 🎉
+			<br>See you at the field! ⚽         
+		</div>
+    	   </div>
     </body>
    
 
