@@ -1,19 +1,51 @@
+/* GLOBAL */
 
-    #template {
+body {
+      background-color: white;
+    }
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    }
+
+#images {
+    position: relative;
+    align-self: stretch;
+    }
+
+.nav {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color: whitesmoke; 
+    opacity: 0.8;
+    text-align: center;
+    padding: 0;
+    margin-top: 10px;
+    }
+
+.nav li {
+    font-size: 80%;
+    color: #36454F;
+    display: inline-block;
+    }
+
+#current {
+    color: white;
+    background-color:#36454F;
+    opacity: 0.7;
+    }
+
+/* SELECT PAGE */
+
+#template {
       display: none;
     }
-    
-    body {
-      background-color: white;
-      margin-bottom: 300px;
-    }
 
-/**
-* ! My comments:   border: 2px solid black;
-* ? My comments
-**/
-
-    .product-card {
+.product-card {
       float: left;
       width: 130px;
       height: 300px;
@@ -22,39 +54,38 @@
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
-
-    .product-image {
+.product-image {
       width: 90%;
       height: 130px;
       object-fit: contain;
       margin: 5%;
     }
 
-    .product-info {
+.product-info {
       width: 100%;
       height: 150px;
       line-height: 10px;
       border-radius: 5px;
     }
 
-    .product-name {
+.product-name {
       font-size: 70%;
       opacity: 0.5;
       margin: 3%;
       padding: 5px;
     }
 
-    .custom-select {
+.custom-select {
       position: relative;
       left: 30%;
     }
     
-    .custom-select select {
+.custom-select select {
       padding: 3px;
       font-size: 80%
     }
 
-    .addnumber {
+.addnumber {
       font-size: 70%;
       line-height: 10px;
       opacity: 0.8;
@@ -62,7 +93,7 @@
       padding: 3px;
     }
 
-    .price {
+.price {
       line-height: 10px;
       font-weight: 900;
       font-size: 80%;
@@ -70,7 +101,7 @@
       padding: 5px;
     }
 
-    .add-to-cart-button {
+.add-to-cart-button {
       width: 110px;
       height: 25px;
       font-size: 70%;
@@ -85,11 +116,11 @@
       padding: 3px;
     }
 
-    .add-to-cart-button:hover {
+.add-to-cart-button:hover {
       background-color: #D3D3D3;
     }
 
-    .switch {
+.switch {
       position: relative;
       display: inline-block;
       width: 30px;
@@ -99,14 +130,14 @@
     }
 
     /* Hide default HTML checkbox */
-    .switch input {
+.switch input {
       opacity: 0;
       width: 0;
       height: 0;
     }
 
     /* The slider */
-    .slider {
+.slider {
       position: absolute;
       cursor: pointer;
       border-radius: 10px;
@@ -119,7 +150,7 @@
       transition: .4s;
     }
 
-    .slider:before {
+.slider:before {
       position: absolute;
       border-radius: 50%;
       content: "";
@@ -132,41 +163,16 @@
       transition: .4s;
     }
 
-    input:checked+.slider {
+input:checked+.slider {
       background-color: #FFD700;
     }
 
-    input:checked+.slider:before {
+input:checked+.slider:before {
       -webkit-transform: translateX(21px);
       -ms-transform: translateX(21px);
       transform: translateX(21px);
     }
 
-    .nav {
-      position: relative;
-      left: 0px;
-      bottom: 0px;
-      width: 100%;
-      background-color: whitesmoke;
-      text-align: center;
-      padding: 0;
-    }
-
-    .nav a {
-      text-decoration: none;
-      font-size: 80%;
-      color: #36454F;
-    }
-
-    .nav li {
-      display: inline-block;
-    }
-
-    #current a {
-      color: white;
-      background-color: #36454F;
-      opacity: 0.7;
-    }
 
 #snackbar {
   visibility: hidden;
@@ -185,13 +191,12 @@
 }
 
 #snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2s;
-  animation: fadein 0.5s, fadeout 0.5s 2s;
+      visibility: visible;
+      -webkit-animation: fadein 0.5s, fadeout 0.5s 2s;
+      animation: fadein 0.5s, fadeout 0.5s 2s;
 }
 
-    
-  .topbar {
+.topbar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,17 +205,17 @@
     padding: 10px 10px;
   }
 
-    .cartIcon {
+.cartIcon {
       height: 50%;
       position: relative;
       font-size: 100%;
     }
     
-    .cartIcon img{
+.cartIcon img{
       height: 2em;
     }
 
-    #cartAmount{
+#cartAmount{
       position: absolute;
       bottom:0;
       color: #FFD700;
@@ -218,7 +223,7 @@
       border-radius: 50px;
     }
 
-    .reviewButton button {
+.reviewButton button {
       height: 50%;
       background-color: #FFD700;
       border-radius: 5px;
