@@ -37,18 +37,7 @@
 <form action="selection.html">
 <select name="datalist" class="players" id="datalist">
 	
-			<script>
-				    function fillPlayers() {
-        					var select = document.getElementById("datalist"); 
-        					for(var i = 0; i < players.length; i++) {
-        					var opt = players[i];
-        					var element = document.createElement("option");
-        					element.text = opt;
-        					element.value = opt;
-     						select.add(element);
-        					};}
-  					fillPlayers()
-			</script>
+<script src="index.js"></script>			
 </select>
 <input id="player-selection-button" type="submit">
   
