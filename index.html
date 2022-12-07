@@ -4,7 +4,7 @@
           <!--add a chat box
               -->
 
-        <title>P2013 Vihrea Stadium team order 2022/11</title>
+        <title>P2016 Musta Stadium team order 2022/12</title>
      
 		<meta chartset="UTF-8" http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="index.css" />	
@@ -12,26 +12,30 @@
 </head>
 	
 <body>
-	<p><img src="images/honkaLogo.png" alt="FC Honka logo" style="float:left;height:40px;">
-	<img src="images/stadiumLogo.webp" alt="Stadium Teamsales logo" style="float:right;height:30px;"></p>
-        <br><br><br>
+	<div className="header">
+		<div id="images">
+			<img src="images/honkaLogo.png" alt="FC Honka logo" style="float:left;height:40px;">
+			<img src="images/stadiumLogo.webp" alt="Stadium Teamsales logo" style="float:right;height:30px;">
+        	</div>
 		<header>
 			<ul class="nav">
-			<li id=current><a href="index.html">1. Select a player > </a></li>
-			<li><a href="selection.html">2. Choose products > </a></li>
-			<li><a href="cart.html">3. Check and confirm your order</a></li> 
+			<li id=current>1. Select a player > </li>
+			<li>2. Choose products > </li>
+			<li>3. Check and confirm your order</li> 
 			</ul>
 		</header>
-		<br><br>
+	</div>
 	
-	<div class="centerTXT">Hi there, P2013 Green<br>FC Honka player!
-	<br><br>Welcome to place your order for the team gear from Stadium.
-	<br><br>Please select a player that you are ordering for:<br>
+	<div class="center">
+		<p>Hi there, P2016 Musta FC Honka player!
+		<br>Welcome to place your order for the team gear from Stadium.
+		<br>Please select a player that you are ordering for:<br></p>
 		
 <script src="data.js"></script>
 	  
 <form action="selection.html">
 <select name="datalist" class="players" id="datalist">
+	
 			<script>
 				    function fillPlayers() {
         					var select = document.getElementById("datalist"); 
@@ -50,7 +54,7 @@
   
 </form>
 	    
-	<br><br>Make sure to list your wishes by the <span style="background-color:black">end of Sunday, November 20th!</span>
+		<span style="background-color:black">Make sure to list your wishes by the <br>end of Sunday, December 11th!</span>
 	</div>
 
 </body>
