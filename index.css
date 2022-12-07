@@ -1,54 +1,54 @@
-		body {
-		background-image: url('images/grass.jpg');
-		background-attachment: fixed;
- 		background-size: cover;
-      		margin-bottom: 100px;
-		}
+body {
+	background-image: url('images/grass.jpg');
+	background-attachment: fixed;
+ 	background-size: cover;
+	}
     
-		.centerTXT { 
-		text-align: center; 
-		color: white; 
-		font-family: Arial,sans-serif; 
-		font-weight: 700;
-		font-size: 80%;
-		}
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    }
 
-		.players { 
-		background-color: #FFD700;
-      		border-radius: 5px;
-		}
+#images {
+    position: relative;
+    align-self: stretch;
+    }
 
-		#player-selection-button {
-      		background-color: #FFD700;
-		border-width: 1px;
-    		border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-      		border-radius: 5px;
-      		cursor: pointer;
-    		}
+.nav {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color: whitesmoke; 
+    opacity: 0.8;
+    text-align: center;
+    padding: 0;
+    margin-top: 10px;
+    }
 
-		.nav {
-		position: relative;
-		left: 0px;
-		bottom: 0px;
-		width: 100%;
-		background-color: whitesmoke; 
-		opacity: 0.8;
-		text-align: center;
-		padding: 0;
-		}
+.nav li {
+    font-size: 80%;
+    color: #36454F;
+    display: inline-block;
+    }
 
-		.nav a {
-		text-decoration: none;
-		font-size: 80%;
-		color: #36454F;}
+#current {
+    color: white;
+    background-color:#36454F;
+    opacity: 0.7;
+    }
 
-		.nav li {
-		display: inline-block;
-		}
+.players { 
+	background-color: #FFD700;
+      	border-radius: 5px;
+	}
 
-		#current a {
-		color: white;
-		background-color:#36454F;
-		opacity: 0.7;
-  		}
+#player-selection-button {
+   	background-color: #FFD700;
+	border-width: 1px;
+    	border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+      	border-radius: 5px;
+      	cursor: pointer;
+    	}
     
