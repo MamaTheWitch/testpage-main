@@ -72,13 +72,12 @@
       <script>
 
         let basket = JSON.parse(localStorage.getItem("data")) || [];
-        
         var Product = document.getElementById("template")
+        document.getElementById("cartAmount").innerText = basket.length;
 
         for (let i = 0; i < shopItems.length; i++) {
 
           let clone = Product.cloneNode(true)
-
           clone.id = i
 
           clone.getElementsByClassName("product-image")[0].src = shopItems[i].pic;
