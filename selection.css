@@ -15,7 +15,7 @@ body {
     align-self: stretch;
     }
 
-.nav {
+    .nav {
     position: relative;
     left: 0px;
     bottom: 0px;
@@ -27,13 +27,13 @@ body {
     margin-top: 10px;
     }
 
-.nav li {
+    .nav li {
     font-size: 80%;
     color: #36454F;
     display: inline-block;
     }
 
-#current {
+    #current {
     color: white;
     background-color:#36454F;
     opacity: 0.7;
