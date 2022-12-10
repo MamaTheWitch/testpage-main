@@ -196,7 +196,7 @@ input:checked+.slider:before {
       animation: fadein 0.5s, fadeout 0.5s 2s;
 }
 
-.topbar {
+  .topbar {
     display: flex;
     justify-content: center;
     align-items: center;
