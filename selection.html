@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-  <title>P2016 Musta Stadium team order 2022/12</title>
+  <title>P2013 Keltainen Stadium team order 2023/03</title>
   <meta chartset="UTF-8" http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="selection.css" type="text/css" />
   <link href="images/honkaLogo.png" rel="shortcut icon" type="image/x-icon" />
@@ -114,7 +114,8 @@
           
           document.body.append(clone);
 
-          function AddPrintText() {
+          function AddPrintText(i) {
+
           if (shopItems[i].print == 0) {
           return document.getElementsByClassName("addnumber")[i+1].innerText = "Price including print.";}
           else if (shopItems[i].print == null) {
@@ -122,11 +123,12 @@
           else {
           return document.getElementsByClassName("addnumber")[i+1].innerText = "Add a number? (+"+shopItems[i].print+"€)";}
           };
-          AddPrintText()
+
+          AddPrintText(i);
 
           let checkBox = document.getElementsByClassName("PrintCheck")[i+1];
          
-          function AddPrintPrice() {
+          function AddPrintPrice(i,checkBox) {
           if (checkBox.checked == true) {
           return document.getElementsByClassName("price")[i+1].innerText = (shopItems[i].price + shopItems[i].print).toFixed(2) + " eur";}
           else {
@@ -134,7 +136,7 @@
           };
 
           clone.getElementsByClassName("PrintCheck")[0].addEventListener("click", function(){
-          AddPrintPrice() });
+          AddPrintPrice(i,checkBox) });
 
           
           clone.getElementsByClassName("add-to-cart-button")[0].addEventListener("click", function(){
@@ -160,8 +162,8 @@
                 item: shopItems[i].text,
                 size: sizeSelection2,
                 print: checkBox.checked,
-                price: AddPrintPrice(),
-                price2: parseFloat(AddPrintPrice()),
+                price: AddPrintPrice(i,checkBox),
+                price2: parseFloat(AddPrintPrice(i,checkBox)),
                            });
             
             console.log(basket);
