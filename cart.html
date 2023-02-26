@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>P2016 Musta Stadium team order 2022/12</title>
+        <title>P2013 Keltainen Stadium team order 2023/03</title>
 	    <meta chartset="UTF-8" http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="stylesheet" href="cart.css"/>
 		<link href="images/honkaLogo.png" rel="shortcut icon" type="image/x-icon" />
@@ -49,7 +49,7 @@
 <script>
 	
 	var mutation = `mutation InsertP00($player: String, $product: String, $item: String, $price: String, $image: String, $size: String, $print: Boolean, $price2: Float) {
-  insert_p00(objects: {player: $player, product: $product, item: $item, price: $price, image: $image, size: $size, print: $print, price2: $price2}) {
+  insert_p13(objects: {player: $player, product: $product, item: $item, price: $price, image: $image, size: $size, print: $print, price2: $price2}) {
     affected_rows
    
   }
@@ -101,7 +101,14 @@ function GenerateCartItems(){
 
 GenerateCartItems()
 	
+	let finalCheck = () => {
+		 	localStorage.clear();
+			window.location='kiitos.html'+window.location.search;
+		};
+	
         document.getElementById("Submit").addEventListener("click", function(){
+			let arrayOfPromises = [];
+
 			for (var i = 0, len = basket.length; i < len; i++) {
 				async function postData(url = 'https://honka-server.hasura.app/v1/graphql', data = basket) {
 		  		const response = await fetch(url, {
@@ -114,10 +121,13 @@ GenerateCartItems()
 				console.log(myJason);
 		  		return myJason;
 				}; 
-				postData();
-		 	localStorage.clear();
-			window.location='kiitos.html'+window.location.search;
-			}
+				arrayOfPromises.push(postData());
+//				postData().then(finalCheck).catch(()=>{alert("Oops! Try again 🙃");});
+				
+//.finally (run something no matter if then or catch executed)
+			};
+		Promise.all(arrayOfPromises).then(finalCheck).catch(()=>{alert("Oops! Try again 🙃");});
+		
 		});          
 
    
