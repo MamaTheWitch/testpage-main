@@ -28,7 +28,8 @@
 	
 	    <div class="buttons">    
 			<button id="Submit">Yes. Submit my order!</button>
-	    	<button id="BackButton" onclick="window.location='selection.html'+window.location.search;">No. Back to shopping!</button>
+		  	  <div id="loading"></div>
+	    		<button id="BackButton" onclick="window.location='selection.html'+window.location.search;">No. Back to shopping!</button>
 		</div>
      
 		<div class="cart-card" id="template">
@@ -105,10 +106,14 @@ GenerateCartItems()
 		 	localStorage.clear();
 			window.location='kiitos.html'+window.location.search;
 		};
+	const loader = document.querySelector("#loading");
+	function displayLoading() {
+		loader.classList.add("display");
+	};
 	
         document.getElementById("Submit").addEventListener("click", function(){
 			let arrayOfPromises = [];
-
+			displayLoading();
 			for (var i = 0, len = basket.length; i < len; i++) {
 				async function postData(url = 'https://honka-server.hasura.app/v1/graphql', data = basket) {
 		  		const response = await fetch(url, {
